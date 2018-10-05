@@ -1,0 +1,24 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "note app for learining Porposes",
+  "main": "app.js",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "yargs": "^12.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alaaDragneel/note-app.git"
+  },
+  "author": "alaaDragneel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alaaDragneel/note-app/issues"
+  },
+  "homepage": "https://github.com/alaaDragneel/note-app#readme"
+}

@@ -1,13 +1,27 @@
 console.log('>>> Starting Application <<<');
 
-const fs = require('fs');
-const os = require('os');
+const fs    = require('fs');
+const _     = require('lodash');
+const yargs = require('yargs');
 
-let user = os.userInfo();
+const notes = require('./notes');
 
-console.log(`>>> Hello, ${user.username} Welcome Start Building A Cool App <<<`);
+const argv  = yargs.argv;
+let command = argv._[0]; // command index
 
-fs.appendFile('my_file.txt', `Hello, ${user.username} Welcome\n`, (err) => {
-    if (err) console.log('Unable To Write File');
-});
+if (command == 'create') {
+    let message = notes.create(argv.title, argv.body);
+    
+    console.log(message);
+} else if (command == 'list') {
+    notes.list();
 
+} else if (command == 'read') {
+    notes.read(argv.title);
+
+} else if (command == 'remove') {
+    notes.destroy(argv.title);
+
+} else {
+    throw new Error('No Command Provided');
+}
